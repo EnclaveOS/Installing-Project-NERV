@@ -1,53 +1,69 @@
-# Installing-Project-NERV
+# ⚙️ Project NERV Installation Guide (One UI 7 Port for Galaxy A21s)
 
-Welcome To My Step By Step Guide On How To Install Project NERV (Also Known As The One UI 7 Port For The A21s)
+Welcome to the comprehensive, step-by-step guide for installing **Project NERV**—the highly anticipated **One UI 7 Custom ROM Port** for the Samsung Galaxy A21s.
 
-# Getting Ready
+This repository contains the full installation tutorial and links to all necessary files, including the custom ROM, Atlas Kernel, Repartitioner, and TWRP.
 
-MAKE SURE YOUR DEVICE IS:
-A217F Or A217M
+---
 
-Flashing The Port In A Incompatible Device Will Cause A Brick And US Nor Mustafa Will NOT Be Responsible For Any Damages
+## ⚠️ CRITICAL COMPATIBILITY WARNING
 
-What You Need:
-A Compatible A21s Device
-USB Cable
-Computer Or Laptop
-Odin3
+**This custom ROM is ONLY compatible with the following device models:**
+* **Samsung Galaxy A21s (SM-A217F)**
+* **Samsung Galaxy A21s (SM-A217M)**
 
-The Custom ROM Zip
-Repartitioner
-Atlas Kernel
-vbmeta_c.tar (IF NEEDED)
-TWRP
+**Flashing this port on an incompatible device WILL cause a hard brick.** Neither the maintainer (Mustafa) nor the creator of this guide assumes responsibility for any damages to your device.
 
-The Required Software And Requirements Will Be In This Github
+---
 
-# Getting Started
+## 📦 What You'll Need
 
-Go To Settings > About Phone > Software Information
-Click On Developer Options 4/5 Times
-If You Have A Passcode, Enter Your Passcode To Enable Developer Mode
+Ensure you have the following ready before starting the process:
 
-Now Go Back To The Settings Menu And You Should Find Developer Options At The Bottom, Click On It
+* A compatible Samsung Galaxy A21s device (**A217F or A217M**)
+* USB Cable
+* Computer or Laptop
+* Odin3 software
+* **Required Files (Linked in this repository):**
+    * The Custom ROM Zip (Project NERV)
+    * Repartitioner
+    * Atlas Kernel
+    * `vbmeta_c.tar` (If needed)
+    * TWRP Custom Recovery
 
-Tick OEM Unlock And USB Debugging On(You May Need A Internet Connection For OEM Unlock To Show Up)
-Now Power Off Your Phone Completely
+---
 
-# Unlocking The Bootloader
+## 1. Getting Started: Preparing Your Device
 
-Hold Both Volume Up And Down Buttons, While Holding Them, Connect Your Phone To A Computer And Laptop
+1.  Navigate to **Settings** $\to$ **About Phone** $\to$ **Software Information**.
+2.  Tap on **Build Number** 4-5 times until a prompt confirms that **Developer mode has been enabled**. *(If you have a passcode, you will be required to enter it).*
+3.  Return to the main **Settings** menu and find **Developer Options** at the bottom. Click on it.
+4.  Tick both **OEM Unlock** and **USB Debugging** to 'On'. *(An internet connection may be required for **OEM Unlock** to appear or function).*
+5.  Completely power off your phone.
 
-You Should See A Warning, If You Did It Right, If You Hold The Volume Up Button You Should Be Able To See "Unlock Bootloader?"
+---
 
-If So Press The Volume Up To Procced
+## 2. Unlocking the Bootloader
 
-NOTE THAT DATA WILL BE LOST DURING THIS PROCESS
+1.  Hold down both the **Volume Up** and **Volume Down** buttons simultaneously.
+2.  While holding the buttons, connect your phone to your Computer/Laptop using the USB cable.
+3.  You should see a **Warning Screen**.
+4.  To proceed, **hold down the Volume Up button**. You will see a screen asking, "Unlock Bootloader?".
+5.  Press **Volume Up** again to confirm and proceed with the unlock.
 
-DO NOT LET YOUR PHONE POWER ON AGAIN AFTER THE FACTORY RESET IS DONE, HOLD BOTH VOLUME UP AND DOWN BUTTONS AFTER THE SCREEN TURNS OFF
+***
 
-# Flashing TWRP
+**⚠️ NOTE: All data will be erased during this bootloader unlocking process.**
 
-Once Back On Download Mode, Press The Volume Up, If On Your Odin3 Program, If You See [ID:COM XX] Thats Good, Your Device Is Being Detected, Download The TWRPV2.tar from this github, Select It On BL, Go To The Options Tab And Uncheck "Automatic Restart" Then Click "Begin"
+**CRITICAL STEP:** After the factory reset completes and the screen turns off, **DO NOT** let your phone power on again. Immediately hold both **Volume Up** and **Volume Down** buttons to re-enter Download Mode.
 
-This Will Take A Few Seconds To Flash
+***
+
+## 3. Flashing TWRP Custom Recovery
+
+1.  Once you are back in **Download Mode**, press the **Volume Up** button.
+2.  On your PC, open **Odin3**. A successful connection is indicated if you see `[ID:COM XX]` light up.
+3.  Download the `TWRPV2.tar` file from this GitHub repository.
+4.  In Odin3, select the **BL** slot and load the `TWRPV2.tar` file.
+5.  Go to the **Options** tab in Odin3 and **UNCHECK** the box next to **"Automatic Restart"**.
+6.  Click **"Begin"**. The flashing process should take only a few seconds.
