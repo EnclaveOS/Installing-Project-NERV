@@ -47,3 +47,7 @@ NOTE THAT DATA WILL BE LOST DURING THIS PROCESS
 DO NOT LET YOUR PHONE POWER ON AGAIN AFTER THE FACTORY RESET IS DONE, HOLD BOTH VOLUME UP AND DOWN BUTTONS AFTER THE SCREEN TURNS OFF
 
 # Flashing TWRP
+
+Once Back On Download Mode, Press The Volume Up, If On Your Odin3 Program, If You See [ID:COM XX] Thats Good, Your Device Is Being Detected, Download The TWRPV2.tar from this github, Select It On BL, Go To The Options Tab And Uncheck "Automatic Restart" Then Click "Begin"
+
+This Will Take A Few Seconds To Flash
