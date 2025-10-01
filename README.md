@@ -2,6 +2,8 @@
 
 # ⚙️ Project NERV Installation Guide (One UI 7 Port for Galaxy A21s)
 
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mustvfa&show_icons=true)](https://github.com/mustvfa)
+
 Welcome to the comprehensive, step-by-step guide for installing **Project NERV**—the highly anticipated **One UI 7 Custom ROM Port** for the Samsung Galaxy A21s.
 
 This repository contains the full installation tutorial and links to all necessary files, including the custom ROM, Atlas Kernel, Repartitioner, and TWRP.
