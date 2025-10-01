@@ -72,7 +72,7 @@ Ensure you have the following ready before starting the process:
 
 ## 4. Entering TWRP
 
-Since we unchecked "Automatic Restart" in Odin, your phone should now be off and have TWRP flashed. Now, we need to boot directly into it.
+Since we unchecked "Automatic Restart" in Odin, your phone should stay on but now have TWRP flashed. Now, we need to boot directly into it.
 
 1.  Hold down the **Volume Down** and **Power** buttons.
 2.  **IMMEDIATELY** after the screen turns off (which happens as the phone reboots), quickly release those buttons and hold down **Power** and **Volume Up**.
