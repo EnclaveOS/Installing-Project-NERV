@@ -72,8 +72,38 @@ Ensure you have the following ready before starting the process:
 
 ## 4. Entering TWRP
 
-Since we unchecked "Automatic Restart" in Odin, your phone should stay on but have TWRP flashed. Now, we need to boot directly into it.
+Since we unchecked "Automatic Restart" in Odin, your phone should stay on but now have TWRP flashed. Now, we need to boot directly into it.
 
 1.  Hold down the **Volume Down** and **Power** buttons.
 2.  **IMMEDIATELY** after the screen turns off (which happens as the phone reboots), quickly release those buttons and hold down **Power** and **Volume Up**.
 3.  If done correctly, you should now see the **TWRP Splash Screen**, confirming you have entered recovery mode.
+
+---
+
+## 5. Flashing The Repartitioner
+
+The repartitioner is required to properly size the partitions for the new One UI 7 ROM.
+
+You can transfer and flash the `repartitioner.zip` using an external storage method (SD Card/USB) or by using ADB Sideload.
+
+### Method A: External Storage (SD Card / USB OTG)
+
+1.  Insert your **SD Card** or **USB OTG** drive containing the `repartitioner.zip`.
+2.  In TWRP, tap **Install** $\to$ **Select Storage** $\to$ **SD Card/USB OTG**.
+3.  Select the `repartitioner.zip` file.
+4.  **Swipe to flash** the zip file.
+
+### Method B: ADB Sideload
+
+1.  In TWRP, tap **Advanced** $\to$ **ADB Sideload**.
+2.  **Swipe to Start Sideload**.
+3.  On your computer, execute the following command:
+    ```bash
+    adb sideload /path/to/the/repartitioner.zip
+    ```
+
+### Completion
+Once flashing is complete, you must reboot back into recovery:
+* Tap **Reboot** $\to$ **Recovery**.
+
+---
