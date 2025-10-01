@@ -35,7 +35,7 @@ Ensure you have the following ready before starting the process:
 
 ## 1. Getting Started: Preparing Your Device
 
-1.  Navigate to **Settings** $\to$ **About Phone** $\to$ **Software Information**.
+1.  Navigate to **Settings** > **About Phone** > **Software Information**.
 2.  Tap on **Build Number** 4-5 times until a prompt confirms that **Developer mode has been enabled**. *(If you have a passcode, you will be required to enter it).*
 3.  Return to the main **Settings** menu and find **Developer Options** at the bottom. Click on it.
 4.  Tick both **OEM Unlock** and **USB Debugging** to 'On'. *(An internet connection may be required for **OEM Unlock** to appear or function).*
@@ -72,7 +72,7 @@ Ensure you have the following ready before starting the process:
 
 ## 4. Entering TWRP
 
-Since we unchecked "Automatic Restart" in Odin, your phone should stay on but now have TWRP flashed. Now, we need to boot directly into it.
+Since we unchecked "Automatic Restart" in Odin, your phone should now be off and have TWRP flashed. Now, we need to boot directly into it.
 
 1.  Hold down the **Volume Down** and **Power** buttons.
 2.  **IMMEDIATELY** after the screen turns off (which happens as the phone reboots), quickly release those buttons and hold down **Power** and **Volume Up**.
@@ -89,13 +89,13 @@ You can transfer and flash the `repartitioner.zip` using an external storage met
 ### Method A: External Storage (SD Card / USB OTG)
 
 1.  Insert your **SD Card** or **USB OTG** drive containing the `repartitioner.zip`.
-2.  In TWRP, tap **Install** $\to$ **Select Storage** $\to$ **SD Card/USB OTG**.
+2.  In TWRP, tap **Install** > **Select Storage** > **SD Card/USB OTG**.
 3.  Select the `repartitioner.zip` file.
 4.  **Swipe to flash** the zip file.
 
 ### Method B: ADB Sideload
 
-1.  In TWRP, tap **Advanced** $\to$ **ADB Sideload**.
+1.  In TWRP, tap **Advanced** > **ADB Sideload**.
 2.  **Swipe to Start Sideload**.
 3.  On your computer, execute the following command:
     ```bash
@@ -104,6 +104,67 @@ You can transfer and flash the `repartitioner.zip` using an external storage met
 
 ### Completion
 Once flashing is complete, you must reboot back into recovery:
-* Tap **Reboot** $\to$ **Recovery**.
+* Tap **Reboot** > **Recovery**.
 
 ---
+
+## 6. Flashing Project NERV and Atlas Kernel
+
+*(If you see mount errors from your device during this step, it is normal and should resolve itself afterwards.)*
+
+### Step 6.1: Flash Project NERV ROM (`nerv.zip`)
+
+Use the same method you used in Step 5 (External Storage or ADB Sideload) to flash the main ROM file.
+
+#### Method A: External Storage (SD Card / USB OTG)
+1.  In TWRP, tap **Install** > **Select Storage** > **SD Card/USB OTG**.
+2.  Select the **`nerv.zip`** file.
+3.  **Swipe to flash** the zip file.
+
+#### Method B: ADB Sideload
+1.  In TWRP, tap **Advanced** > **ADB Sideload**.
+2.  **Swipe to Start Sideload**.
+3.  On your computer, execute the following command:
+    ```bash
+    adb sideload /path/to/the/nerv.zip
+    ```
+
+### Step 6.2: Flash Atlas Kernel (`atlas_kernel.zip`)
+
+Immediately after the ROM flash completes, flash the Atlas Kernel **without rebooting**.
+
+1.  Still in the TWRP Install menu, tap the **"Add more Zips"** button (if available) or go back and tap **Install** again.
+2.  Select the **`Atlas Kernel`** zip file.
+3.  **Swipe to flash** the kernel.
+
+### Step 6.3: Wipe and Reboot
+
+This is the final cleaning step before booting the new ROM.
+
+1.  Go to the main TWRP menu and tap **Wipe**.
+2.  Tap **Advanced Wipe**.
+3.  Select the following partitions:
+    * **Dalvik/ART Cache**
+    * **Cache**
+    * **Data**
+4.  **Swipe to Wipe** the selected partitions.
+5.  Finally, tap **Reboot** > **System**.
+
+---
+
+## 7. Flashing vbmeta_c (Troubleshooting First Boot)
+
+***
+
+**⚠️ ONLY PERFORM THIS STEP IF YOUR DEVICE REVERTS TO DOWNLOAD MODE INSTEAD OF BOOTING THE CUSTOM ROM (With Errors).**
+
+***
+
+If your device fails to boot into Project NERV after Step 6 and drops back to Download Mode, it indicates that the stock recovery/firmware is trying to revert the changes. Use this step to resolve the issue:
+
+1.  Ensure your phone is still connected to the computer and is in **Download Mode**.
+2.  On your PC, open **Odin3**. Confirm the device is detected (`[ID:COM XX]` is lit).
+3.  Click the **BL** button and load the **`vbmeta_c.tar`** file.
+4.  Click **"Start"**.
+
+After the flash completes, your device should reboot automatically. If you see the "Powered by Android" screen and the device proceeds to the setup, **CONGRATULATIONS!** You have successfully installed Project NERV on your A21s.
